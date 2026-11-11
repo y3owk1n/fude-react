@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>fude in React</title>
+		<style>
+		:root {
+			color-scheme: light dark;
+			font-family: system-ui, sans-serif;
+		}
+		main {
+			max-width: 760px;
+			margin: 48px auto;
+			padding: 0 16px;
+		}
+		.meta,
+		.log {
+			color: GrayText;
+			font-size: 14px;
+		}
+		.log {
+			font-family: ui-monospace, monospace;
+			padding-left: 0;
+			list-style: none;
+		}
+		.fude {
+			--hl-keyword: #cf222e;
+			--hl-string: #0a3069;
+			--hl-comment: #6e7781;
+			--hl-function: #8250df;
+			--hl-number: #0550ae;
+			--hl-property: #953800;
+			--hl-type: #116329;
+		}
+		@media (prefers-color-scheme: dark) {
+			.fude {
+				--hl-keyword: #ff7b72;
+				--hl-string: #a5d6ff;
+				--hl-comment: #8b949e;
+				--hl-function: #d2a8ff;
+				--hl-number: #79c0ff;
+				--hl-property: #ffa657;
+				--hl-type: #7ee787;
+			}
+		}
+		.hl-keyword,
+		.hl-operator {
+			color: var(--hl-keyword);
+		}
+		.hl-string,
+		.hl-string-special {
+			color: var(--hl-string);
+		}
+		.hl-comment {
+			color: var(--hl-comment);
+			font-style: italic;
+		}
+		.hl-function,
+		.hl-function-method,
+		.hl-function-builtin,
+		.hl-constructor {
+			color: var(--hl-function);
+		}
+		.hl-number,
+		.hl-constant,
+		.hl-constant-builtin,
+		.hl-variable-builtin {
+			color: var(--hl-number);
+		}
+		.hl-property {
+			color: var(--hl-property);
+		}
+		.hl-embedded {
+			color: var(--hl-type);
+		}
+		.controls {
+			display: flex;
+			flex-wrap: wrap;
+			gap: 8px 16px;
+			align-items: center;
+			margin: 12px 0;
+			font-size: 14px;
+		}
+		</style>
+	</head>
+	<body>
+		<div id="root"></div>
+		<script type="module" src="/src/main.jsx"></script>
+	</body>
+</html>

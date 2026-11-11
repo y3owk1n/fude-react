@@ -1,0 +1,14 @@
+{
+	"$schema": "https://biomejs.dev/schemas/2.6.6/schema.json",
+	"files": {
+		"includes": [
+			"src/**",
+			"!src/wasm_exec.js",
+			"demos/*.mjs",
+			"test/*.mjs",
+			"index.html",
+			"*.json"
+		]
+	},
+	"html": { "formatter": { "enabled": true } }
+}

@@ -1,0 +1,8 @@
+github.com/clipperhouse/displaywidth v0.11.0 h1:lBc6kY44VFw+TDx4I8opi/EtL9m20WSEFgwIwO+UVM8=
+github.com/clipperhouse/displaywidth v0.11.0/go.mod h1:bkrFNkf81G8HyVqmKGxsPufD3JhNl3dSqnGhOoSD/o0=
+github.com/clipperhouse/uax29/v2 v2.7.0 h1:+gs4oBZ2gPfVrKPthwbMzWZDaAFPGYK72F0NJv2v7Vk=
+github.com/clipperhouse/uax29/v2 v2.7.0/go.mod h1:EFJ2TJMRUaplDxHKj1qAEhCtQPW2tJSwu5BF98AuoVM=
+github.com/y3owk1n/fude/core v0.4.1 h1:lnpp8dqnSSYi9+Ch5ENjkG+2JCE/1ZhMR84NtvhNRUc=
+github.com/y3owk1n/fude/core v0.4.1/go.mod h1:LFPFbFEEP1PN33MY+L40E1tUWBbTSPEkgVdNnI/LwRY=
+github.com/y3owk1n/fude/vim v0.4.1 h1:VuKaWe0i5ReMFoOtNbJ1fiwekH1OjmTt9akjXq4bVQg=
+github.com/y3owk1n/fude/vim v0.4.1/go.mod h1:02OJIoIX1hHx3wMQUegg+YxvegEEUL/VxxbBsJ91jU0=

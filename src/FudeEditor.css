@@ -1,0 +1,214 @@
+/* Override these on .fude, or on a class given to the editor, to theme it. */
+.fude {
+	--fg: #1f2328;
+	--bg: #ffffff;
+	--dim: #6e7781;
+	--border: #d0d7de;
+	--focus: #0969da;
+	--cursor: #1f2328;
+	--cursor-fg: #ffffff;
+	--cursors: #8250df;
+	--selection: #b6d7ff;
+	--match: #fff8c5;
+	--flash: #ffd8b5;
+	--error: #cf222e;
+	--status: #f3f4f6;
+	--font: 14px / 1.45 ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+	--line: 1.45em;
+	position: relative;
+	font: var(--font);
+	color: var(--fg);
+	background: var(--bg);
+	border: 1px solid var(--border);
+	border-radius: 6px;
+	overflow: hidden;
+}
+
+@media (prefers-color-scheme: dark) {
+	.fude {
+		--fg: #e6edf3;
+		--bg: #0d1117;
+		--dim: #8b949e;
+		--border: #30363d;
+		--focus: #4493f8;
+		--cursor: #e6edf3;
+		--cursor-fg: #0d1117;
+		--cursors: #a371f7;
+		--selection: #264f78;
+		--match: #5a4a00;
+		--flash: #6b3a12;
+		--error: #f85149;
+		--status: #161b22;
+	}
+}
+
+.fude:focus-within {
+	border-color: var(--focus);
+}
+
+.fude.fude-loading,
+.fude.fude-failed {
+	box-sizing: border-box;
+	height: calc((var(--rows) + 1) * var(--line) + 24px);
+	padding: 8px 12px;
+	color: var(--dim);
+}
+
+.fude.fude-failed {
+	color: var(--error);
+}
+
+.fude .fude-body {
+	display: flex;
+	padding: 8px 0;
+}
+
+.fude .fude-gutter {
+	flex: none;
+	min-width: calc(var(--digits) * 1ch);
+	padding: 0 8px 0 12px;
+	color: var(--dim);
+	text-align: right;
+	user-select: none;
+}
+
+.fude .fude-gutter div {
+	height: var(--line);
+}
+
+.fude .fude-gutter .fude-current {
+	color: var(--fg);
+}
+
+.fude .fude-text {
+	flex: 1;
+	min-width: 0;
+	height: calc(var(--rows) * var(--line));
+	padding-left: 12px;
+	overflow: hidden;
+	tab-size: 8;
+	cursor: text;
+	user-select: none;
+}
+
+/* A line is as wide as its text and a margin, so a caret at its end can
+   scroll into view. */
+.fude .fude-line {
+	box-sizing: border-box;
+	width: max-content;
+	min-width: 100%;
+	height: var(--line);
+	padding-right: 12px;
+	white-space: pre;
+}
+
+.fude .fude-sel {
+	background: var(--selection);
+}
+
+.fude .fude-match {
+	background: var(--match);
+}
+
+.fude .fude-flash {
+	animation: fude-flash 0.4s ease-out;
+}
+
+@keyframes fude-flash {
+	from {
+		background: var(--flash);
+	}
+}
+
+.fude .fude-cursor,
+.fude .fude-cursors {
+	background: var(--dim);
+	color: var(--bg);
+}
+
+.fude:focus-within .fude-cursor {
+	background: var(--cursor);
+	color: var(--cursor-fg);
+}
+
+.fude:focus-within .fude-cursors {
+	background: var(--cursors);
+	color: var(--cursor-fg);
+}
+
+.fude .fude-caret {
+	display: inline-block;
+	width: 2px;
+	height: 1.2em;
+	margin-right: -2px;
+	vertical-align: -0.2em;
+	background: var(--dim);
+}
+
+.fude:focus-within .fude-caret {
+	background: var(--cursor);
+	animation: fude-blink 1s steps(1) infinite;
+}
+
+@keyframes fude-blink {
+	50% {
+		opacity: 0;
+	}
+}
+
+/* The input takes keys, and shows only what an input method composes. */
+.fude .fude-input {
+	position: absolute;
+	width: 1px;
+	height: var(--line);
+	padding: 0;
+	border: 0;
+	margin: 0;
+	opacity: 0;
+	resize: none;
+	overflow: hidden;
+	font: inherit;
+	white-space: pre;
+	pointer-events: none;
+}
+
+.fude .fude-input.fude-composing {
+	width: 16em;
+	opacity: 1;
+	color: var(--fg);
+	background: var(--bg);
+	outline: 1px solid var(--focus);
+}
+
+.fude .fude-status {
+	display: flex;
+	gap: 12px;
+	padding: 4px 12px;
+	height: var(--line);
+	background: var(--status);
+	white-space: pre;
+	overflow: hidden;
+}
+
+.fude .fude-mode {
+	text-transform: uppercase;
+	font-weight: 600;
+}
+
+.fude .fude-message {
+	flex: 1;
+	min-width: 0;
+	color: var(--dim);
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.fude .fude-message.fude-error {
+	color: var(--error);
+}
+
+.fude .fude-note,
+.fude .fude-shown,
+.fude .fude-ruler {
+	color: var(--dim);
+}

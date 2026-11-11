@@ -1,0 +1,97 @@
+# Written by oku. Commit this file, and change it with oku commands only.
+
+include = []
+
+[[package]]
+name = 'biome'
+ref = 'github:biomejs/biome'
+commit = '359deb19db7254cacc5cfa4bcc974bbc7d8223cf'
+manifest_sha256 = 'defe09cb84f4d7223b2d62aee54144b8b8a6dc16e8e35c7f257b8778a08ddc24'
+version = '2.6.6'
+signer_workflow = 'biomejs/biome/.github/workflows/release.yml'
+tag = '@biomejs/biome@2.6.6'
+inferred = true
+manifest = "[package]\nname = \"biome\"\nhomepage = \"https://github.com/biomejs/biome\"\nsigner_workflow = \"biomejs/biome/.github/workflows/release.yml\"\nattestations = true\n\n[version]\nfrom = \"github-releases\"\nrepo = \"biomejs/biome\"\nstrip_prefix = \"@biomejs/biome@\"\n\n[[artifact]]\nmatch = { os = \"linux\", arch = \"amd64\", libc = \"glibc\" }\nurl = \"https://github.com/biomejs/biome/releases/download/%40biomejs/biome%402.6.6/biome-linux-x64\"\nbin = [\"biome\"]\n\n[[artifact]]\nmatch = { os = \"linux\", arch = \"amd64\" }\nurl = \"https://github.com/biomejs/biome/releases/download/%40biomejs/biome%402.6.6/biome-linux-x64-musl\"\nbin = [\"biome\"]\n\n[[artifact]]\nmatch = { os = \"darwin\", arch = \"amd64\" }\nurl = \"https://github.com/biomejs/biome/releases/download/%40biomejs/biome%402.6.6/biome-darwin-x64\"\nbin = [\"biome\"]\n\n[[artifact]]\nmatch = { os = \"windows\", arch = \"amd64\" }\nurl = \"https://github.com/biomejs/biome/releases/download/%40biomejs/biome%402.6.6/biome-win32-x64.exe\"\nbin = [\"biome.exe\"]\n\n[[artifact]]\nmatch = { os = \"linux\", arch = \"arm64\", libc = \"glibc\" }\nurl = \"https://github.com/biomejs/biome/releases/download/%40biomejs/biome%402.6.6/biome-linux-arm64\"\nbin = [\"biome\"]\n\n[[artifact]]\nmatch = { os = \"linux\", arch = \"arm64\" }\nurl = \"https://github.com/biomejs/biome/releases/download/%40biomejs/biome%402.6.6/biome-linux-arm64-musl\"\nbin = [\"biome\"]\n\n[[artifact]]\nmatch = { os = \"darwin\", arch = \"arm64\" }\nurl = \"https://github.com/biomejs/biome/releases/download/%40biomejs/biome%402.6.6/biome-darwin-arm64\"\nbin = [\"biome\"]\n\n[[artifact]]\nmatch = { os = \"windows\", arch = \"arm64\" }\nurl = \"https://github.com/biomejs/biome/releases/download/%40biomejs/biome%402.6.6/biome-win32-arm64.exe\"\nbin = [\"biome.exe\"]\n"
+
+[package.platform]
+[package.platform.darwin-arm64]
+strategy = 'artifact'
+url = 'https://github.com/biomejs/biome/releases/download/%40biomejs/biome%402.6.6/biome-darwin-arm64'
+sha256 = 'dec6124a5e3ea475e8625a7a85b5a2ec939c1077624f95b78cfc1cb96199fab1'
+verified = 'sigstore'
+
+[[package]]
+name = 'ffmpeg'
+ref = 'github:y3owk1n/oku-config#packages/ffmpeg.toml'
+commit = '7fb7de1b7926a2cf98e0ee9b5cc6125c4f2cd1ed'
+manifest_sha256 = '39c883b8b6fa4ef53ab7bf199062b651b6eb78e915ffbfe488274aad0307218b'
+version = '6.1.1'
+tag = 'b6.1.1'
+
+[package.platform]
+[package.platform.darwin-arm64]
+strategy = 'artifact'
+url = 'https://github.com/eugeneware/ffmpeg-static/releases/download/b6.1.1/ffmpeg-darwin-arm64.gz'
+sha256 = '8923876afa8db5585022d7860ec7e589af192f441c56793971276d450ed3bbfa'
+verified = 'published'
+
+[[package]]
+name = 'go'
+ref = 'github:y3owk1n/fude#.oku/go.toml'
+commit = '3e4f0b6779c0a131dcd6ab124b43569e23a72bea'
+manifest_sha256 = '4e86afdeda4063d8c7cc15bedb7857112496c03e8608295229e30bd61a6dd9d8'
+version = '1.27.3'
+tag = 'go1.27.3'
+
+[package.platform]
+[package.platform.darwin-arm64]
+strategy = 'artifact'
+url = 'https://dl.google.com/go/go1.27.3.darwin-arm64.tar.gz'
+sha256 = 'dd3908cf20959d798c1e06ebe5b72213f0505ce01373b40ce3110975a6cd99c2'
+verified = 'checksum-file'
+
+[[package]]
+name = 'just'
+ref = 'github:casey/just'
+commit = '2f9dfaec10fb6125931e830a748a544f158dc206'
+manifest_sha256 = '433f4c587cf42161bf04be4fe20110cc064fed1c38716b56e429ffade5b33435'
+version = '1.59.0'
+inferred = true
+manifest = "[package]\nname = \"just\"\nhomepage = \"https://github.com/casey/just\"\n\n[version]\nfrom = \"github-releases\"\nrepo = \"casey/just\"\n\n[[artifact]]\nmatch = { os = \"linux\", arch = \"amd64\" }\nurl = \"https://github.com/casey/just/releases/download/{{tag}}/just-{{tag}}-x86_64-unknown-linux-musl.tar.gz\"\nsha256_url = \"https://github.com/casey/just/releases/download/{{tag}}/SHA256SUMS\"\nbin = [\"just\"]\nman = [\"just.1\"]\n\n[[artifact]]\nmatch = { os = \"darwin\", arch = \"amd64\" }\nurl = \"https://github.com/casey/just/releases/download/{{tag}}/just-{{tag}}-x86_64-apple-darwin.tar.gz\"\nsha256_url = \"https://github.com/casey/just/releases/download/{{tag}}/SHA256SUMS\"\nbin = [\"just\"]\nman = [\"just.1\"]\n\n[[artifact]]\nmatch = { os = \"linux\", arch = \"arm64\" }\nurl = \"https://github.com/casey/just/releases/download/{{tag}}/just-{{tag}}-aarch64-unknown-linux-musl.tar.gz\"\nsha256_url = \"https://github.com/casey/just/releases/download/{{tag}}/SHA256SUMS\"\nbin = [\"just\"]\nman = [\"just.1\"]\n\n[[artifact]]\nmatch = { os = \"darwin\", arch = \"arm64\" }\nurl = \"https://github.com/casey/just/releases/download/{{tag}}/just-{{tag}}-aarch64-apple-darwin.tar.gz\"\nsha256_url = \"https://github.com/casey/just/releases/download/{{tag}}/SHA256SUMS\"\nbin = [\"just\"]\nman = [\"just.1\"]\n\n[[artifact]]\nmatch = { os = \"linux\", arch = \"arm\" }\nurl = \"https://github.com/casey/just/releases/download/{{tag}}/just-{{tag}}-armv7-unknown-linux-musleabihf.tar.gz\"\nsha256_url = \"https://github.com/casey/just/releases/download/{{tag}}/SHA256SUMS\"\nbin = [\"just\"]\nman = [\"just.1\"]\n"
+
+[package.platform]
+[package.platform.darwin-arm64]
+strategy = 'artifact'
+url = 'https://github.com/casey/just/releases/download/1.59.0/just-1.59.0-aarch64-apple-darwin.tar.gz'
+sha256 = '6574cea774ed4cae12e24b6aa11857de33e80dab4667cf628fd5840df96a2a9d'
+verified = 'checksum-file'
+
+[[package]]
+name = 'node'
+ref = 'github:y3owk1n/oku#examples/runtimes/node.toml'
+commit = '5e6a53ea077ff822fb0abe850c8e34b256de2365'
+manifest_sha256 = '9bc15dcf0bbe6efb743005e4277227ef89db478c69e1bc9d6848058ce649cbd1'
+version = '22.23.4'
+tag = 'v22.23.4'
+
+[package.platform]
+[package.platform.darwin-arm64]
+strategy = 'artifact'
+url = 'https://nodejs.org/dist/v22.23.4/node-v22.23.4-darwin-arm64.tar.gz'
+sha256 = 'c9e1dbc748b33ed2d14f42445191ecaf14c56259c7a9a26d0042c49ec2b66428'
+verified = 'checksum-file'
+
+[[package]]
+name = 'tinygo'
+ref = 'github:y3owk1n/fude#.oku/tinygo.toml'
+commit = '3e4f0b6779c0a131dcd6ab124b43569e23a72bea'
+manifest_sha256 = '04dabcfad170880f2d1a5a020e7b9b89faa843fb46a4079ad3da5101c6a39542'
+version = '0.43.0'
+tag = 'v0.43.0'
+
+[package.platform]
+[package.platform.darwin-arm64]
+strategy = 'artifact'
+url = 'https://github.com/tinygo-org/tinygo/releases/download/v0.43.0/tinygo0.43.0.darwin-arm64.tar.gz'
+sha256 = 'f5e0161f212fb69ad4650a4809e3ca66856e184892e80058f0d47abc64151812'
+verified = 'published'

@@ -1,0 +1,5 @@
+node_modules/
+dist/
+src/fude.wasm
+src/wasm_exec.js
+.DS_Store

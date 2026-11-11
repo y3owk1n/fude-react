@@ -1,0 +1,16 @@
+# The toolchain to build the example. `oku sync` installs it, `oku allow` lets
+# the shell hook put it on PATH here.
+[runtimes]
+go = { ref = "github:y3owk1n/fude#.oku/go.toml", version = "1.27.3" }
+
+[packages]
+go = { ref = "github:y3owk1n/fude#.oku/go.toml", version = "1.27.3" }
+# tinygo builds the grammar into wasm a third the size go's is.
+tinygo = { ref = "github:y3owk1n/fude#.oku/tinygo.toml", version = "^0.43" }
+# node runs npm and vite, which build and serve the page.
+node = { ref = "github:y3owk1n/oku#examples/runtimes/node.toml", version = "^22" }
+just = { ref = "github:casey/just", version = "^1" }
+# biome formats and lints the component and the page.
+biome = { ref = "github:biomejs/biome", version = "^2" }
+# ffmpeg joins the frames `just demo` records into the README's gif.
+ffmpeg = { ref = "github:y3owk1n/oku-config#packages/ffmpeg.toml" }
